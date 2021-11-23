@@ -41,13 +41,13 @@ class student:
         self.grades = Grades
     def average(self):
         numOfCourses = len(self.getGrades())
-        self.Average = sum(self.getGrades) / numOfCourses
-        return self.Average
+        avg = sum(self.getGrades) / numOfCourses
+        return avg
     def getHonorRoll(self):
-        if self.Average >= 86:
-            self.onHonorRoll = True
-        else:
-            self.onHonorRoll = False
+        self.grades.sort(reverse=True)
+        avg = self.grades[0] + self.grades[1] + self.grades[2] + self.grades[3] + self.grades[4] / 5
+        if avg >= 86:
+            return True
 
     def __del__(self):
         pass
@@ -57,12 +57,9 @@ class student:
 def main():
     # This contains test data that will be used by the autograder.
     # do not modify this function
-
     st1 = student("Anita Bath","91334",11)
     st1.getCourses( ["English","Math","PE","Computers","History","Biology","Japanese"] )
     st1.getGrades( [91, 94, 87, 99, 82, 100, 73])
-    print(st1.__dict__)
-    exit()
     st2 = student("Joe Lunchbox","12346", 11)
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
     st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
