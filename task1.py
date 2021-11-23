@@ -40,8 +40,8 @@ class student:
     def getGrades(self,Grades):
         self.grades = Grades
     def average(self):
-        numOfCourses = len(self.getGrades())
-        avg = sum(self.getGrades) / numOfCourses
+        numOfCourses = len(self.grades)
+        avg = sum(self.grades) / numOfCourses
         return avg
     def getHonorRoll(self):
         self.grades.sort(reverse=True)
@@ -63,7 +63,6 @@ def main():
     st2 = student("Joe Lunchbox","12346", 11)
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
     st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
-
 
 
 
